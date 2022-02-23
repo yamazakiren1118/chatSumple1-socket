@@ -7,7 +7,9 @@ var io = require('socket.io')(http,{
   }
 });
 
-http.listen(port);
+http.listen(port,()=>function(){
+  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+});
 // http.listen(3000);
 io.configure(function () {
   io.set("transports", ["xhr-polling"]);
