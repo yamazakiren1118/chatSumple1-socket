@@ -9,6 +9,10 @@ var io = require('socket.io')(http,{
 
 http.listen(port);
 // http.listen(3000);
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
+});
 
 io.on('connection', function(socket){
   socket.on('room', function(n){
