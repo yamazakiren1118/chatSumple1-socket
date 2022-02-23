@@ -1,12 +1,14 @@
 var http = require('http').createServer();
+var port = process.env.PORT || 5000
 var io = require('socket.io')(http,{
   cors:{
-    origin: ["http://localhost:8000", "http://127.0.0.1:8000"],
+    origin: ["http://localhost:8000", "http://127.0.0.1:8000", "https://afternoon-ocean-12045.herokuapp.com"],
     methods: ["GET", "POST", "DELETE", "OPTIONS"]
   }
 });
 
-http.listen(3000);
+http.listen(port);
+// http.listen(3000);
 
 io.on('connection', function(socket){
   socket.on('room', function(n){
