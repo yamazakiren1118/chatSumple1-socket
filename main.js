@@ -1,5 +1,5 @@
 var http = require('http').createServer();
-var port = process.env.PORT || 5000
+var port = process.env.PORT || 3000
 var io = require('socket.io')(http,{
   cors:{
     origin: ["http://localhost:8000", "http://127.0.0.1:8000", "https://afternoon-ocean-12045.herokuapp.com"],
