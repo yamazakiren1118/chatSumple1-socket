@@ -1,7 +1,7 @@
 var http = require('http').createServer();
 var port = process.env.PORT || 3000
 var url = process.env.LARAVEL_URL || "http://localhost:9000";
-var io = require('socket.io')(https,{
+var io = require('socket.io')(http,{
   cors:{
     origin: ["http://localhost:8000", "http://127.0.0.1:8000", url],
     methods: ["GET", "POST", "DELETE", "OPTIONS"]
