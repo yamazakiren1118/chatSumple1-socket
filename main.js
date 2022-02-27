@@ -20,6 +20,7 @@ http.listen(port,()=>function(){
 // });
 
 io.on('connection', function(socket){
+  console.log('connection');
   socket.on('room', function(n){
     socket.join(n);
   });
@@ -28,6 +29,7 @@ io.on('connection', function(socket){
   });
 });
 
-
-
+io.on('disconnection', function(){
+  console.log('DisConnection');
+});
 
