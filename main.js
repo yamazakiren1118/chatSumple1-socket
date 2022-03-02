@@ -25,8 +25,12 @@ io.on('connection', function(socket){
     socket.join(n);
   });
   socket.on('chat', function(data){
-    io.to(data['room_id']).emit('chat', data['text']);
+    console.log(data);
+    io.to(data['room_id']).emit('chat', {text: data['text'], id: data['id']});
   });
+  socket.on('chat_d', function(data){
+    io.to(data['room_id']).emit('chat_d', {id: data['id']});
+  })
 });
 
 io.on('disconnection', function(){
